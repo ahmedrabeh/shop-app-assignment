@@ -1,0 +1,32 @@
+<div class="container">
+  <h1 class="title">Product List</h1>
+
+  <!-- Filter and Sort Controls -->
+  <div class="controls">
+    <input
+      type="text"
+      placeholder="Filter by name"
+      (input)="onInputChange($event)"
+      class="filter-input"
+    />
+    <button class="sort-button" (click)="sortProducts('name')">Sort by Name</button>
+    <button class="sort-button" (click)="sortProducts('price')">Sort by Price</button>
+  </div>
+
+  <!-- Product Cards -->
+  <div class="product-grid">
+    <div class="product-card" *ngFor="let product of filteredProducts">
+      <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+      <div class="product-details">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <p>
+          <span class="new-price">{{ product.price }} $</span>
+        </p>
+        <button class="view-details" (click)="navigateToDetails(product.id)">
+          View Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

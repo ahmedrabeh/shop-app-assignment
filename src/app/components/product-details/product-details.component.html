@@ -1,0 +1,14 @@
+<div class="details-container" *ngIf="product">
+  <!-- Product Card -->
+  <div class="details-card">
+    <img [src]="product.image" alt="{{ product.name }}" class="details-image" />
+    <div class="details-content">
+      <h1 class="details-title">{{ product.name }}</h1>
+      <p class="details-description">{{ product.description }}</p>
+      <p class="details-price">
+        <span class="new-price">{{ product.price }} $</span>
+      </p>
+      <button class="back-button" routerLink="/">Back to Product List</button>
+    </div>
+  </div>
+</div>
